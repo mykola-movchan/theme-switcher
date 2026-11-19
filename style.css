@@ -35,20 +35,141 @@
 }
 
 body {
-    font-size: 14px;
-}
+  font-size: 14px;
+  background-color: var(--gray-950-bg);
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
 
-
-.inter-400 {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
 
-.inter-700 {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
+main {
+  padding-block: 1em;
+  width: 95%;
+  display: grid;
+  gap: 2em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  h3 {
+    color: var(--gray-400-text);
+  }
+}
+
+.main-data {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+}
+
+.big-card {
+  min-height: 250px;
+  width: 100%;
+  background-color: var(--navy-950-card-bg);
+  border-radius: 8px;
+  border-top: 8px solid var(--top-border);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  text-align: center;
+
+  .social-p span {
+    color: var(--gray-400-text);
+    font-weight: 700;
+    padding: 0.5em;
+  }
+
+  .social-p img {
+    vertical-align: sub;
+  }
+
+  h2 {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 4rem;
+  }
+
+  h4 {
+    color: var(--gray-400-text);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+  }
+
+  .count strong {
+    font-weight: 700;
+  }
+
+  .count strong[data-gains="positive"] {
+    color: var(--green-500);
+  }
+
+  .count strong[data-gains="negative"] {
+    color: var(--red-500);
+  }
+
+  .count img {
+    vertical-align: middle;
+  }
+}
+
+.gradient {
+  background-image: 
+    linear-gradient(var(--navy-950-card-bg), var(--navy-950-card-bg)),
+    linear-gradient(
+      to right, 
+      hsl(37, 97%, 70%), 
+      hsl(5, 77%, 71%), 
+      hsl(329, 70%, 58%)
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+
+  h2 {
+    grid-column: 1 / -1;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .s-card {
+    min-height: 150px;
+    padding: 2em;
+    background-color: var(--navy-950-card-bg);
+    border-radius: 8px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .s-card > :nth-child(even) {
+    justify-self: end;
+  }
+
+  .s-card > :nth-child(n + 3) {
+    align-self: end;
+  }
 }
